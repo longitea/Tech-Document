@@ -189,7 +189,32 @@ function Header(childrent){
 <Header>Thanh Long</Header>
 ```
 
-Vì component được viết trong JSX. Mà JSX có 2 kiểu truyền, nên chilrent prop không chỉ nhận vào kiểu dữ liệu là String mà còn có thể nhận vào kiểu Expresstion
+Vì component được viết trong JSX. Mà JSX có 2 kiểu truyền, nên chilrent prop không chỉ nhận vào kiểu dữ liệu là String mà còn có thể nhận vào kiểu Expression
+
+```jsx
+    // UI Component
+    function List({ data, children }) {
+        return (
+            <ul>
+                {data.map(car => children(car))}
+            </ul>
+        )
+    }
+
+    // Container
+    function App() {
+        const cars = ['BMW', 'Honda', 'Mazda']
+
+        return (
+            <div id="wrapper">
+                <List data={cars}>
+                    {item => <li key={item}>{item}</li>}
+                </List>
+            </div>
+        )
+    }
+
+```
 
 ```
 Sau này trong thực tế, childrent Prop còn có thể bọc được cả Component luôn cơ ❤️
@@ -226,6 +251,7 @@ sau khi đã nắm kiến thức rồi thì phải luyện tập cho thuần th�
 3. truyền prop vào bên trong component thì truyền và nhận như thế nào nè.
 
 **Childrent Prop**
+
 Childrent thì cũng tương tự như thằng trên
 1. truyền chilrent prop bằng phương thức createElement (Khởi tạo React Element bằng JS thuần)
 2. truyền chilrent prop thông qua JSX (tương tự như html thôi không có gì khó)
