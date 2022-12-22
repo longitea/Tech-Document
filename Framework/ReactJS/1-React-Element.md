@@ -167,7 +167,7 @@ nội dung nằm giữa 1 cặp thẻ mở và đóng, cấu trúc bên trong DO
 
 *Text Node Trong DOM*
 ```html
-<h1>Thanh Long<h1>
+<h1>Thanh Long</h1>
 ```
 
 *Childrent Prop Trong JSX*
